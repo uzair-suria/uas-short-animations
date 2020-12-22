@@ -111,7 +111,7 @@ const useStyles = createUseStyles({
 		right: 0,
 		bottom: 0,
 		textAlign: 'center',
-		color: '#212121',
+		// color: '#212121',
 		borderRadius: '100%',
 		zIndex: 1,
 	},
@@ -132,10 +132,7 @@ const Blob = ({ children }) => {
 			<span />
 			<div className={styles.container}>
 				<div className={styles.content}>
-					<div className={styles.text}>
-						<h2>Heading</h2>
-						<p>{children}</p>
-					</div>
+					<div className={styles.text}>{children}</div>
 				</div>
 			</div>
 		</div>
