@@ -36,57 +36,54 @@ const randomRadiiGenerator = (min, max) => {
 
 const useStyles = createUseStyles({
 	square: {
-		width: 300,
-		height: 300,
+		width: '100%',
+		// height: 300,
+		// paddingTop: '50%',
+		// BoxSizing: 'border-box',
 		margin: 10,
 		left: 0,
+		borderRadius: '100%',
 		position: 'relative',
 		'& span:nth-child(1)': {
 			position: 'absolute',
-			width: 300,
-			height: 300,
+			width: '100%',
+			paddingTop: '100%',
 			left: 0,
 			borderRadius: randomRadiiGenerator(40, 60),
 			transition: '1.5s',
-			background: '#6c63ff',
-			opacity: 0.4,
+			background: '#9c27b054',
 			animation: '$blob-rotate-1 4s linear infinite',
 		},
 		'&:hover span:nth-child(1)': {
-			background: '#6c63ff',
-			opacity: 0.5,
+			background: '#9c27b054',
 			borderRadius: '100%',
 		},
 		'& span:nth-child(2)': {
 			position: 'absolute',
-			width: 300,
-			height: 300,
+			width: '100%',
+			paddingTop: '100%',
 			left: 0,
 			borderRadius: randomRadiiGenerator(40, 60),
 			transition: '1.5s',
-			background: '#6c63ff',
-			opacity: 0.4,
+			background: '#e91e6354',
 			animation: '$blob-rotate-1 6s reverse linear infinite',
 		},
 		'&:hover span:nth-child(2)': {
-			background: '#6c63ff',
-			opacity: 0.5,
+			background: '#e91e6354',
 			borderRadius: '100%',
 		},
 		'& span:nth-child(3)': {
 			position: 'absolute',
-			width: 300,
-			height: 300,
+			width: '100%',
+			paddingTop: '100%',
 			left: 0,
 			borderRadius: randomRadiiGenerator(40, 60),
 			transition: '1.5s',
-			background: '#6c63ff',
-			opacity: 0.4,
+			background: '#00968854',
 			animation: '$blob-rotate-1 8s linear infinite',
 		},
 		'&:hover span:nth-child(3)': {
-			background: '#6c63ff',
-			opacity: 0.5,
+			background: '#00968854',
 			borderRadius: '100%',
 		},
 	},
@@ -98,34 +95,48 @@ const useStyles = createUseStyles({
 			transform: 'rotate(360deg)',
 		},
 	},
-	content: {
+	container: {
+		marginTop: '5vh',
 		position: 'relative',
+		width: '100%',
+		paddingTop: '100%',
+		overflow: 'hidden',
+		borderRadius: '100%',
+		// background: 'black',
+	},
+	content: {
+		position: 'absolute',
+		top: 0,
+		left: 0,
+		right: 0,
+		bottom: 0,
 		textAlign: 'center',
-		padding: '50px 30px',
-		color: '#f4cb55',
-		transition: '0.5s',
+		color: '#212121',
+		borderRadius: '100%',
 		zIndex: 1,
-		'& > h2': {
-			fontSize: '1em',
-			fontWeight: 'bolder',
-			textTransform: 'uppercase',
-		},
-		'& > p': {
-			fontSize: '11pt',
-		},
+	},
+	text: {
+		paddingTop: '10%',
+		width: '60%',
+		marginLeft: '20%',
 	},
 });
 
 const Blob = ({ children }) => {
 	const styles = useStyles();
+
 	return (
 		<div className={styles.square}>
 			<span />
 			<span />
 			<span />
-			<div className={styles.content}>
-				<h2>Heading</h2>
-				<p>{children}</p>
+			<div className={styles.container}>
+				<div className={styles.content}>
+					<div className={styles.text}>
+						<h2>Heading</h2>
+						<p>{children}</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
