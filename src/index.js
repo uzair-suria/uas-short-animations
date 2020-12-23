@@ -1,11 +1,23 @@
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { grey } from '@material-ui/core/colors';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const theme = createMuiTheme({
+	palette: {
+		text: {
+			primary: grey[50],
+		},
+	},
+});
+
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<ThemeProvider theme={theme}>
+			<App />
+		</ThemeProvider>
 	</React.StrictMode>,
 	document.getElementById('root')
 );
