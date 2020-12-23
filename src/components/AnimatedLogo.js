@@ -5,7 +5,7 @@ const useStyles = createUseStyles({
 	svgImage: {
 		width: '100%',
 		'& #logo': {
-			animationDuration: '1.5s',
+			animationDuration: '3s',
 			animationName: '$animateLogo',
 			animationIterationCount: 'infinite',
 			animationDirection: 'alternate',
@@ -15,11 +15,20 @@ const useStyles = createUseStyles({
 		},
 	},
 	'@keyframes animateLogo': {
-		from: {
+		'0%': {
 			transform: 'translateX(0) translateY(0)',
 			opacity: 0,
 		},
-		to: {
+		'10%': {
+			transform: 'translateX(0) translateY(0)',
+			opacity: 0,
+		},
+		'90%': {
+			transform: 'translateX(86.91082125px) translateY(-50.3998275px)',
+			opacity: 1,
+			'backdrop-filter': 'blur(50px)',
+		},
+		'100%': {
 			transform: 'translateX(86.91082125px) translateY(-50.3998275px)',
 			opacity: 1,
 			'backdrop-filter': 'blur(50px)',
