@@ -267,7 +267,7 @@ const AnimatedWebsite = () => {
 		<div className={styles.svgWrapper}>
 			<svg
 				width="877"
-				height="662"
+				// height="662"
 				viewBox="0 0 877 662"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
