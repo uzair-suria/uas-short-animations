@@ -1,34 +1,162 @@
-import AnimatedLogo from './components/AnimatedLogo';
-import Blob from './components/Blob';
+import React from 'react';
+import TitleBar from './components/TitleBar';
 
-import AnimatedCollaboration from './components/AnimatedCollaboration';
+import './App.css';
+import { Grid, makeStyles, Typography } from '@material-ui/core';
+import {
+	AnimatedBlob,
+	AnimatedCollaboration,
+	AnimatedLogo,
+	AnimatedWebsite,
+} from './components/animated-components';
 
-import AnimatedWebsite from './components/AnimatedWebsite';
-import { Typography } from '@material-ui/core';
+const useStyles = makeStyles((theme) => ({
+	root: {
+		flexGrow: 1,
+	},
+	gridItem: {
+		// padding: 20,
+		marginBottom: 50,
+		padding: '5%',
+	},
+	heading: {
+		margin: '0px 0px 10px 0px',
+	},
+}));
 
 function App() {
+	const styles = useStyles();
 	return (
-		<div className="App" style={{ textAlign: 'center' }}>
-			<h4>Website under development...</h4>
-			<div>Please Visit Later</div>
-			<AnimatedLogo />
-			<Blob>
-				<Typography variant="h4">Yet Another Animated Component</Typography>
-				<Typography variant="body1">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-					omnis provident exercitationem illo ratione, officiis natus ad. Iure
-					dolorem quisquam beatae laboriosam at qui earum voluptatibus vel
-					accusamus voluptas? Inventore. Lorem ipsum dolor sit amet consectetur
-					adipisicing elit. Ut ea necessitatibus totam, tempora vitae aliquid
-					sed ad nam illum voluptatem quae, quia dolorem incidunt veniam
-					suscipit temporibus, debitis dolore ipsa? Lorem, ipsum dolor sit amet
-					consectetur adipisicing elit. Ea minima dignissimos enim, reiciendis
-					voluptatem cumque magnam fuga autem quas culpa nam cum! Quidem
-					voluptatum nisi distinctio saepe modi recusandae consequatur.
-				</Typography>
-			</Blob>
-			<AnimatedWebsite />
-			<AnimatedCollaboration />
+		<div className="App">
+			<TitleBar />
+			<div className={styles.root}>
+				<Grid container>
+					{/* Animated Logo */}
+					<Grid item xs={12} md={6} className={styles.gridItem}>
+						<Typography
+							variant="h5"
+							color="textPrimary"
+							className={styles.heading}
+						>
+							A Service that Completes your Product
+						</Typography>
+						<Typography variant="body1" color="textPrimary">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Necessitatibus dicta veniam voluptatum eius obcaecati neque dolor
+							provident voluptas suscipit esse quod nihil doloremque, quis quo
+							tempora? Dolorem omnis rem sed.
+						</Typography>
+						<Typography variant="body1" color="textPrimary">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Necessitatibus dicta veniam voluptatum eius obcaecati neque dolor
+							provident voluptas suscipit esse quod nihil doloremque, quis quo
+							tempora? Dolorem omnis rem sed.
+						</Typography>
+					</Grid>
+					<Grid item xs={12} md={6} className={styles.gridItem}>
+						<div style={{ paddingLeft: '20%', paddingRight: '10%' }}>
+							<AnimatedLogo />
+						</div>
+					</Grid>
+					{/* Animated Website */}
+					<Grid item xs={12} md={6} className={styles.gridItem}>
+						<div>
+							<AnimatedWebsite />
+						</div>
+					</Grid>
+					<Grid item xs={12} md={6} className={styles.gridItem}>
+						<Typography
+							variant="h5"
+							color="textPrimary"
+							className={styles.heading}
+						>
+							All your Web Solutions in One Place
+						</Typography>
+						<Typography variant="body1" color="textPrimary">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Necessitatibus dicta veniam voluptatum eius obcaecati neque dolor
+							provident voluptas suscipit esse quod nihil doloremque, quis quo
+							tempora? Dolorem omnis rem sed.
+						</Typography>
+						<Typography variant="body1" color="textPrimary">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Necessitatibus dicta veniam voluptatum eius obcaecati neque dolor
+							provident voluptas suscipit esse quod nihil doloremque, quis quo
+							tempora? Dolorem omnis rem sed.
+						</Typography>
+					</Grid>
+					{/* Animated Collaboration */}
+					<Grid item xs={12} md={6} className={styles.gridItem}>
+						<Typography
+							variant="h5"
+							color="textPrimary"
+							className={styles.heading}
+						>
+							A Collborative Environment
+						</Typography>
+						<Typography variant="body1" color="textPrimary">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Necessitatibus dicta veniam voluptatum eius obcaecati neque dolor
+							provident voluptas suscipit esse quod nihil doloremque, quis quo
+							tempora? Dolorem omnis rem sed.
+						</Typography>
+						<Typography variant="body1" color="textPrimary">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Necessitatibus dicta veniam voluptatum eius obcaecati neque dolor
+							provident voluptas suscipit esse quod nihil doloremque, quis quo
+							tempora? Dolorem omnis rem sed.
+						</Typography>
+					</Grid>
+					<Grid item xs={12} md={6} className={styles.gridItem}>
+						<div style={{ height: '10%' }}>
+							<AnimatedCollaboration />
+						</div>
+					</Grid>
+					{/* Animated Blob */}
+					<Grid
+						item
+						xs={12}
+						md={6}
+						className={styles.gridItem}
+						style={{ padding: '5%', overflow: 'hidden' }}
+					>
+						<div>
+							<AnimatedBlob>
+								<Typography variant="h6" align="center" color="secondary">
+									Some Clever Tagline
+								</Typography>
+							</AnimatedBlob>
+						</div>
+					</Grid>
+					<Grid item xs={12} md={6} className={styles.gridItem}>
+						<Typography
+							variant="h5"
+							color="textPrimary"
+							className={styles.heading}
+						>
+							Unique UI/UX Ideas!
+						</Typography>
+						<Typography variant="body1" color="textPrimary">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Necessitatibus dicta veniam voluptatum eius obcaecati neque dolor
+							provident voluptas suscipit esse quod nihil doloremque, quis quo
+							tempora? Dolorem omnis rem sed.
+						</Typography>
+						<Typography variant="body1" color="textPrimary">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Necessitatibus dicta veniam voluptatum eius obcaecati neque dolor
+							provident voluptas suscipit esse quod nihil doloremque, quis quo
+							tempora? Dolorem omnis rem sed.
+						</Typography>
+						<Typography variant="body1" color="textPrimary">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Necessitatibus dicta veniam voluptatum eius obcaecati neque dolor
+							provident voluptas suscipit esse quod nihil doloremque, quis quo
+							tempora? Dolorem omnis rem sed.
+						</Typography>
+					</Grid>
+				</Grid>
+			</div>
 		</div>
 	);
 }
