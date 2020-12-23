@@ -1,3 +1,4 @@
+import { cyan, indigo, teal } from '@material-ui/core/colors';
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
@@ -41,21 +42,25 @@ const useStyles = createUseStyles({
 		// paddingTop: '50%',
 		// BoxSizing: 'border-box',
 		margin: 10,
+		// padding: '5%',
+		// overflow: 'hidden',
 		left: 0,
 		borderRadius: '100%',
 		position: 'relative',
-		'& span:nth-child(1)': {
+		'& span:nth-child(3)': {
 			position: 'absolute',
 			width: '100%',
 			paddingTop: '100%',
 			left: 0,
 			borderRadius: randomRadiiGenerator(40, 60),
 			transition: '1.5s',
-			background: '#9c27b054',
-			animation: '$blob-rotate-1 4s linear infinite',
+			background: teal[100],
+			opacity: 0.8,
+			animation: '$blob-rotate-1 8s linear infinite',
 		},
-		'&:hover span:nth-child(1)': {
-			background: '#9c27b054',
+		'&:hover span:nth-child(3)': {
+			background: teal[100],
+			opacity: 0.8,
 			borderRadius: '100%',
 		},
 		'& span:nth-child(2)': {
@@ -65,25 +70,29 @@ const useStyles = createUseStyles({
 			left: 0,
 			borderRadius: randomRadiiGenerator(40, 60),
 			transition: '1.5s',
-			background: '#e91e6354',
+			background: cyan[100],
+			opacity: 0.8,
 			animation: '$blob-rotate-1 6s reverse linear infinite',
 		},
 		'&:hover span:nth-child(2)': {
-			background: '#e91e6354',
+			background: cyan[100],
+			opacity: 0.8,
 			borderRadius: '100%',
 		},
-		'& span:nth-child(3)': {
+		'& span:nth-child(1)': {
 			position: 'absolute',
 			width: '100%',
 			paddingTop: '100%',
 			left: 0,
 			borderRadius: randomRadiiGenerator(40, 60),
 			transition: '1.5s',
-			background: '#00968854',
-			animation: '$blob-rotate-1 8s linear infinite',
+			background: indigo[300],
+			opacity: 0.8,
+			animation: '$blob-rotate-1 4s linear infinite',
 		},
-		'&:hover span:nth-child(3)': {
-			background: '#00968854',
+		'&:hover span:nth-child(1)': {
+			background: indigo[300],
+			opacity: 0.8,
 			borderRadius: '100%',
 		},
 	},
@@ -116,13 +125,18 @@ const useStyles = createUseStyles({
 		zIndex: 1,
 	},
 	text: {
-		paddingTop: '10%',
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+		padding: '5%',
 		width: '60%',
-		marginLeft: '20%',
+		margin: '0 auto',
+		height: '100%',
+		// marginLeft: '20%',
 	},
 });
 
-const Blob = ({ children }) => {
+const AnimatedBlob = ({ children }) => {
 	const styles = useStyles();
 
 	return (
@@ -139,4 +153,4 @@ const Blob = ({ children }) => {
 	);
 };
 
-export default Blob;
+export default AnimatedBlob;
