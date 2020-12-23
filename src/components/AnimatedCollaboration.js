@@ -148,7 +148,7 @@ const AnimatedCollaboration = () => {
 		<div>
 			<svg
 				width="854"
-				height="538"
+				// height="538"
 				viewBox="0 0 854 538"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
